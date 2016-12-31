@@ -1,0 +1,35 @@
+/* align */
+align-(args)
+  .align-{args}
+    text-align: args
+
+/* float */
+float-(args)
+  .float-{args}
+    float: args
+
+/* clearfix */
+clearfix(classNmae)
+  .{classNmae}
+    {'*zoom '}1
+  .{classNmae}:before,
+  .{classNmae}:after
+    display table
+    content ''
+  .{classNmae}:after
+    clear both
+
+/* 水平居中 */
+center-()
+  /*针对block元素*/
+  .center-hori
+    margin 0 auto
+  .center-vert
+    position relative
+    top 50%
+    transform translateY(-50%)
+  .center-both
+    position relative
+    top 50%
+    transform translateY(-50%)
+    margin 0 auto
