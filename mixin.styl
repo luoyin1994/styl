@@ -1,15 +1,17 @@
 /* align */
-align-(args)
-  .align-{args}
-    text-align: args
+Align(args)
+  .Align{args}
+    text-align args
+
 
 /* float */
-float-(args)
-  .float-{args}
-    float: args
+Float(args)
+  .Float{args}
+    float args
 
-/* clearfix */
-clearfix(classNmae)
+
+/* Clearfix */
+Clearfix(classNmae)
   .{classNmae}
     {'*zoom '}1
   .{classNmae}:before,
@@ -19,17 +21,58 @@ clearfix(classNmae)
   .{classNmae}:after
     clear both
 
+
 /* 水平居中 */
-center-()
-  /*针对block元素*/
-  .center-hori
-    margin 0 auto
-  .center-vert
-    position relative
-    top 50%
-    transform translateY(-50%)
-  .center-both
-    position relative
-    top 50%
-    transform translateY(-50%)
-    margin 0 auto
+/*如果有一个参数，没有初始值时不能在调用时不传参，不传会报错，如Center(flag) Center()则不行，可以将flag初始为为false，像这样Center(flag=false),再在包含代码里用if语句设置==false就可以默认不传参的享受初始flag为false时的代码块*/
+Center(flag = false)
+  if flag is defined
+    if hori in flag
+      margin 0 auto
+    if vert in flag
+      position relative
+      top 50%
+      transform translateY(-50%)
+    if both in flag
+      position relative
+      top 50%
+      transform translateY(-50%)
+      margin 0 auto
+    if both-ab in flag
+      position absolute
+      top 0
+      bottom 0
+      right 0
+      left 0
+      margin auto
+
+  if flag == false
+    .center-hori
+      margin 0 auto
+    .center-vert
+      position relative
+      top 50%
+      transform translateY(-50%)
+    .center-both
+      position relative
+      top 50%
+      transform translateY(-50%)
+      margin 0 auto
+
+
+/* 隐藏出现 */
+ShowHide()
+  .hide
+    display none !important
+
+  .show
+    display block !important
+
+  .invisible
+    visibility hidden
+
+  .text-hide
+    font 0 / 0
+    color transparent
+    text-shadow none
+    background-color transparent
+    border 0
