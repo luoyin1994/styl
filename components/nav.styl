@@ -1,0 +1,61 @@
+.nav
+  @extend .clearfix
+
+nav, .nav
+  //变量定义
+  $height = 7rem
+  $text-align = right
+
+  //代码
+  //宽高文字
+  height $height
+  line-height @height
+  text-align $text-align
+  font-family "Microsoft JhengHei"
+
+  //margin padding
+  margin 0.8rem 0.5rem 2.2rem
+  padding 0 7rem 0
+
+  //整体颜色
+  background linear-gradient(to right top, #7696b4, #b997ff)
+  box-shadow 0 -0.4rem 1rem #4c89db, 0rem 0.4rem 1rem #4c89db,0.4rem 0 1rem #f58dff, -0.4rem 0 1rem #f58dff
+
+  //border
+  Border(
+    $border-width = 1rem 1.5rem,
+    $border-color = #4d6eff #f48bff,
+    $border-radius = 25% 25% 30% 30%,
+    $border-style = solid
+  )
+    border-style $border-style
+    border-width $border-width
+    border-color $border-color
+    border-radius $border-radius
+  Border()
+
+
+  h1
+    float left
+    text-align center
+
+  ul
+    font-size 0//去掉display的空白符空间
+    li
+      //变量
+      $item-space = 3rem//每个li的间距
+      $item-color = #34185c
+      $item-text-shadow = 0.1rem 0.1rem 1.5rem #463f52,-0.1rem -0.1rem 1.5rem #523640
+
+      padding-left $item-space
+      font-size 2.2rem
+      display inline-block
+      a
+        color $item-color
+        text-shadow $item-text-shadow
+        text-decoration none
+        font-weight bold
+        &:hover
+          color #ffe5ff
+          text-shadow 0.1rem 0.1rem 1.5rem #5a515a,-0.1rem -0.1rem 1.5rem #5a515a
+

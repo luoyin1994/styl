@@ -1,4 +1,6 @@
-/*
-
+#排除所有
+*
+#但不包含下列这些
 !.gitignore
 !*.styl
+!/components

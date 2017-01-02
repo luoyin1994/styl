@@ -1,0 +1,32 @@
+/* Grid */
+//row
+row-(size=false)
+  if size != false
+    size='-'+size
+  for i in 1..12
+    .row{size}{'-'}{i} //第二个减号无法识别,还可以{'-'+{i}}
+      float left
+      width (100% / 12) * i
+    .row{size}{'-'}{i}{'-'}center
+      width (100% / 12) * i
+      margin 0 auto
+    .row{size}{'-'}{i}{'-'}right
+      width (100% / 12) * i
+      margin-left auto
+
+
+
+//断点设置
+media-row(breakPoint, size)
+  @media (min-width: breakPoint)
+    row-(size)
+
+//不同浏览器下的row
+row-()
+row-(sm)
+media-row(768px, md)
+media-row(1200px, lg)
+
+//container清除row带来的影响
+clearfix(container)
+clearfix(wrap)

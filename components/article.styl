@@ -1,0 +1,33 @@
+.article
+  box-sizing border-box
+  box-shadow 0.3rem 0.3rem 1.5rem #4e464e,-0.3rem -0.3rem 1.5rem #4e464e,0.1rem 0.1rem  0.1rem #4e464e inset,-0.1rem -0.1rem 0.1rem #4e464e inset
+  margin-bottom 3.5rem
+  padding 4rem 5.5rem
+
+  //border
+  border-style solid
+  border-width 1.5rem 1.5rem
+  border-color #4d6eff #f48bff
+  border-top-left-radius  2.5rem
+  border-top-right-radius  2.5rem
+  border-bottom-left-radius  3rem
+  border-bottom-right-radius  3rem
+
+//给每个article在不同的grid中padding自动处于合适的位置
+row-who(size=false,who=false)
+  if size != false
+    size='-'+size
+  if who != false
+    who='.'+who
+  for i in 2..12
+    //默认row-10的时候为padding 4rem 5.5rem
+    .row{size}{'-'}{i}{who}//第二个减号无法识别,还可以{'-'+{i}}
+      padding (4rem/10)*i (5.5rem/10)*i
+
+    .row{size}{'-'}{i}{'-'}center{who}
+      padding (4rem/10)*i (5.5rem/10)*i
+
+    .row{size}{'-'}{i}{'-'}right{who}
+      padding (4rem/10)*i (5.5rem/10)*i
+    //如果每次引用都需要添加的话，太费劲了，有什么好方法可以从grid.styl引用
+row-who('','article')

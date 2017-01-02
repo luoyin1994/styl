@@ -1,16 +1,16 @@
-/* align */
+///* align */
 Align(args)
-  .Align{args}
+  .align-{args}
     text-align args
 
-
-/* float */
+///* float */
 Float(args)
-  .Float{args}
+  .float-{args}
     float args
 
 
-/* Clearfix */
+
+///* Clearfix */
 Clearfix(classNmae)
   .{classNmae}
     {'*zoom '}1
@@ -21,9 +21,8 @@ Clearfix(classNmae)
   .{classNmae}:after
     clear both
 
-
-/* 水平居中 */
-/*如果有一个参数，没有初始值时不能在调用时不传参，不传会报错，如Center(flag) Center()则不行，可以将flag初始为为false，像这样Center(flag=false),再在包含代码里用if语句设置==false就可以默认不传参的享受初始flag为false时的代码块*/
+///* 水平居中 */
+///*如果有一个参数，没有初始值时不能在调用时不传参，不传会报错，如Center(flag) Center()则不行，可以将flag初始为为false，像这样Center(flag=false),再在包含代码里用if语句设置==false就可以默认不传参的享受初始flag为false时的代码块*/
 Center(flag = false)
   if flag is defined
     if hori in flag
@@ -59,7 +58,7 @@ Center(flag = false)
       margin 0 auto
 
 
-/* 隐藏出现 */
+///* 隐藏出现 */
 ShowHide()
   .hide
     display none !important
@@ -76,3 +75,15 @@ ShowHide()
     text-shadow none
     background-color transparent
     border 0
+
+//border默认样式
+Border(
+  $border-width = 1rem 1.5rem,
+  $border-color = #4d6eff #f48bff,
+  $border-radius = 2.5rem 2.5rem 3.0rem 3.0rem,
+  $border-style = solid
+)
+  border-style $border-style
+  border-width $border-width
+  border-color $border-color
+  border-radius $border-radius
